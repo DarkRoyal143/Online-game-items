@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Failed - GameStore Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .failure-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        .failure-icon {
+            font-size: 4rem;
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🎮 GameStore Pro</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    
+    <div class="failure-container">
+        <div class="failure-icon">✗</div>
+        <h1>Payment Failed</h1>
+        <p>Your payment was not successful. Please try again.</p>
+        <button onclick="window.location.href='index.html'" class="payu-btn" style="margin-top: 2rem;">
+            Try Again
+        </button>
+    </div>
+</body>
+</html>
