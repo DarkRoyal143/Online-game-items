@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore Pro - Buy Coins & Ranks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">🎮 GameStore Pro</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#ranks">Ranks</a></li>
+            <li><a href="#vip">VIP</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Buy Game Coins & Ranks</h1>
+        <p>Fast Delivery • Secure Payment • 24/7 Support</p>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Game Coins</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>1000 Coins</h3>
+                <p>₹50</p>
+                <button onclick="buyNow('1000 Coins', 50)">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <h3>5000 Coins</h3>
+                <p>₹200</p>
+                <button onclick="buyNow('5000 Coins', 200)">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <h3>10000 Coins</h3>
+                <p>₹350</p>
+                <button onclick="buyNow('10000 Coins', 350)">Buy Now</button>
+            </div>
+        </div>
+
+        <h2>Ranks & VIP</h2>
+        <div class="product-grid">
+            <div class="product-card vip">
+                <h3>VIP</h3>
+                <p>₹499/month</p>
+                <ul>
+                    <li>✓ Daily 100 Coins</li>
+                    <li>✓ 10% Discount</li>
+                </ul>
+                <button onclick="buyNow('VIP', 499)">Buy VIP</button>
+            </div>
+            <div class="product-card vip-plus">
+                <h3>VIP+</h3>
+                <p>₹999/month</p>
+                <ul>
+                    <li>✓ Daily 250 Coins</li>
+                    <li>✓ 20% Discount</li>
+                </ul>
+                <button onclick="buyNow('VIP+', 999)">Buy VIP+</button>
+            </div>
+            <div class="product-card vip-plus-plus">
+                <h3>VIP++</h3>
+                <p>₹1499/month</p>
+                <ul>
+                    <li>✓ Daily 500 Coins</li>
+                    <li>✓ 30% Discount</li>
+                </ul>
+                <button onclick="buyNow('VIP++', 1499)">Buy VIP++</button>
+            </div>
+            <div class="product-card mvp">
+                <h3>MVP</h3>
+                <p>₹1999/month</p>
+                <ul>
+                    <li>✓ Daily 750 Coins</li>
+                    <li>✓ 40% Discount</li>
+                </ul>
+                <button onclick="buyNow('MVP', 1999)">Buy MVP</button>
+            </div>
+            <div class="product-card mvp-plus">
+                <h3>MVP+</h3>
+                <p>₹2499/month</p>
+                <ul>
+                    <li>✓ Daily 1000 Coins</li>
+                    <li>✓ 50% Discount</li>
+                </ul>
+                <button onclick="buyNow('MVP+', 2499)">Buy MVP+</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>PayU Payment</h2>
+            <div id="paymentDetails"></div>
+            <form id="payuForm" action="https://test.payu.in/_payment" method="post">
+                <input type="hidden" name="key" id="key" value="YOUR_MERCHANT_KEY">
+                <input type="hidden" name="txnid" id="txnid">
+                <input type="hidden" name="amount" id="amount">
+                <input type="hidden" name="productinfo" id="productinfo">
+                <input type="hidden" name="firstname" id="firstname">
+                <input type="hidden" name="email" id="email">
+                <input type="hidden" name="phone" id="phone">
+                <input type="hidden" name="surl" value="https://yourusername.github.io/gamestore/success.html">
+                <input type="hidden" name="furl" value="https://yourusername.github.io/gamestore/failure.html">
+                <input type="hidden" name="hash" id="hash">
+                
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="emailInput" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="phoneInput" required placeholder="10 digit mobile number">
+                </div>
+                <div class="form-group">
+                    <label>Game ID (for delivery)</label>
+                    <input type="text" id="gameId" required placeholder="Enter your Game ID">
+                </div>
+                <button type="submit" class="payu-btn">Pay with PayU</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 GameStore Pro. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
